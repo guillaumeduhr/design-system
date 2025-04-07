@@ -1,0 +1,68 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { FileUpload } from "@axa-fr/design-system-apollo-react";
+
+const meta: Meta<typeof FileUpload> = {
+  component: FileUpload,
+  title: "Components/Form/Input/FileUpload",
+  args: {},
+};
+
+export default meta;
+
+type Story = StoryObj<typeof FileUpload>;
+
+const render = ({ ...args }: React.ComponentProps<typeof FileUpload>) => (
+  <FileUpload {...args} />
+);
+
+export const FileUploadStory: Story = {
+  name: "FileUpload",
+  render,
+  args: {
+    id: "file-input",
+    className: "",
+    label: "Label",
+    filesListLabel: "Vos fichiers",
+    files: [
+      {
+        id: "1",
+        name: " IMG_8904587880.jpg",
+        size: 109936,
+        isLoading: false,
+      },
+      {
+        id: "2",
+        name: " IMG_465510680.jpg",
+        size: 5010,
+        isLoading: true,
+      },
+      {
+        id: "3",
+        name: " IMG_8904587880.jpg",
+        size: 23000000,
+        isLoading: true,
+      },
+    ],
+    globalError: "Erreur",
+    errors: [
+      {
+        id: "3",
+        message: "Votre fichier fait plus de 19 Mo.",
+      },
+    ],
+    accept: "image/jpeg, image/png, application/*",
+    buttonLabel: "Importer fichier",
+    instructions:
+      "2 fichiers max. / pdf, png, jpg, jpeg, gif / 19 Mo par fichier",
+    dropzoneDescription: "Glissez/déposez vos fichiers",
+    required: false,
+    isMobile: false,
+    multiple: false,
+  },
+  argTypes: {
+    onChange: { action: "onChange" },
+    onView: { action: "onView" },
+    onDelete: { action: "onDelete" },
+  },
+};

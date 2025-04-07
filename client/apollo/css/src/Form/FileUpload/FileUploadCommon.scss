@@ -1,0 +1,192 @@
+.af-form {
+  &__file-upload {
+    --row-gap: calc(32 / var(--font-size-base) * 1rem);
+  }
+
+  &__group {
+    &--label {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--group-label-color);
+    }
+  }
+
+  &__files-list-label {
+    margin-top: 2rem;
+  }
+
+  &__file {
+    &-input {
+      position: relative;
+      display: flex;
+      padding: 2rem;
+      border: 2px dashed var(--file-input-border);
+      border-radius: 8px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: normal;
+      text-align: center;
+      color: var(--file-input-color);
+      background-color: var(--file-input-background);
+      cursor: pointer;
+
+      &.is-mobile {
+        padding-bottom: 1rem;
+      }
+
+      &:hover {
+        border-color: var(--file-input-hover);
+      }
+
+      &--error {
+        border-color: var(--file-input-error);
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      &-dropdown-text {
+        padding-top: 1rem;
+        line-height: 5px;
+      }
+
+      &-help {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--file-input-help);
+      }
+
+      &-icon {
+        path {
+          fill: var(--file-input-icon);
+        }
+      }
+
+      .af-btn-client {
+        width: 50%;
+      }
+    }
+
+    &-list {
+      display: flex;
+      margin-top: 1.125rem;
+      padding: 0;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      list-style: none;
+    }
+
+    &-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      &-icon {
+        &-error {
+          path {
+            fill: var(--file-icon-error);
+          }
+        }
+
+        &-success {
+          path {
+            fill: var(--file-icon-success);
+          }
+        }
+      }
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-name {
+      font-size: 1.125rem;
+      color: var(--file-name);
+    }
+
+    &-size {
+      font-size: 1rem;
+      color: var(--file-size);
+    }
+
+    &-error {
+      display: flex;
+      margin-top: -0.9rem;
+      margin-bottom: 0.9rem;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 1rem;
+      color: var(--file-error);
+
+      &-icon {
+        path {
+          fill: var(--file-error);
+        }
+      }
+    }
+
+    &-line {
+      width: 100%;
+
+      &-container {
+        display: flex;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--file-line-border);
+        border-radius: var(--file-line-border-radius);
+        align-items: center;
+        justify-content: space-between;
+        background: var(--file-line-background);
+
+        &--error {
+          border-color: var(--file-line-error);
+        }
+      }
+    }
+
+    &-actions {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 1rem;
+      cursor: pointer;
+
+      button {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+.is-mobile {
+  .af-form {
+    &__file {
+      &-input {
+        &-dropdown-text {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .af-btn-client {
+    width: 100%;
+  }
+}

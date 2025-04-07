@@ -1,0 +1,53 @@
+@use "./FileUploadCommon";
+
+.af-form {
+  &__group--label {
+    --group-label-color: var(--color-gray-900);
+  }
+
+  &__file {
+    --file-error: var(--color-red-700);
+
+    &-input {
+      --file-input-border: var(--color-axa);
+      --file-input-background: var(--color-white);
+      --file-input-color: var(--color-gray-900);
+      --file-input-icon: var(--color-axa);
+      --file-input-hover: var(--color-gray-700);
+      --file-input-error: var(--color-red-700);
+
+      &-help {
+        --file-input-help: var(--color-gray-700);
+      }
+    }
+
+    &-name {
+      --file-name: var(--color-gray-900);
+    }
+
+    &-size {
+      --file-size: var(--color-gray-700);
+    }
+
+    &-error {
+      --file-error: var(--color-red-700);
+    }
+
+    &-line {
+      --file-line-background: var(--color-white);
+      --file-line-error: var(--color-red-700);
+      --file-line-border: var(--color-gray-700);
+      --file-line-border-radius: var(--default-border-radius);
+    }
+
+    &-title-container-icon {
+      &-error {
+        --file-icon-error: var(--color-red-700);
+      }
+
+      &-success {
+        --file-icon-success: var(--color-green-600);
+      }
+    }
+  }
+}
